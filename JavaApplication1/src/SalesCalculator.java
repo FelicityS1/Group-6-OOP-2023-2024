@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-// Abstract class representing the basic structure of an item
+// Abstract class 
 abstract class Item {
     double price;
 
