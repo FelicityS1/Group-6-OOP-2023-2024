@@ -1,4 +1,4 @@
-package employeeLeave;
+package MotorPHEmployeePage;
 
 import java.awt.EventQueue;
 
@@ -29,12 +29,9 @@ import javax.swing.border.LineBorder;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-import employeeDashboard.EmpDashboard;
-
 public class EmployeeLeavePage {
 
 	private JFrame frmEmployeeLeavePage;
-	private JTextField imagetextField;
 	private JTextField CommentsTxt;
 	private JTable table;
 
@@ -73,24 +70,10 @@ public class EmployeeLeavePage {
 		frmEmployeeLeavePage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmEmployeeLeavePage.getContentPane().setLayout(null);
 		
-		imagetextField = new JTextField();
-		imagetextField.setBounds(532, 93, 197, 198);
-		imagetextField.setHorizontalAlignment(SwingConstants.CENTER);
-		imagetextField.setText("Image here");
-		imagetextField.setFont(new Font("Arial", Font.PLAIN, 12));
-		frmEmployeeLeavePage.getContentPane().add(imagetextField);
-		imagetextField.setColumns(10);
-		
 		JButton ProfileButton = new JButton("Profile");
 		ProfileButton.setBounds(782, 95, 122, 32);
 		ProfileButton.setBackground(new Color(255, 255, 255));
 		ProfileButton.setFont(new Font("Arial", Font.BOLD, 12));
-		ProfileButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				EmployeeProfilePage.main(null);
-			}
-		});
-		
 		frmEmployeeLeavePage.getContentPane().add(ProfileButton);
 		
 		JButton btnLeaveRequest = new JButton("Leave Request");
@@ -141,6 +124,7 @@ public class EmployeeLeavePage {
 		frmEmployeeLeavePage.getContentPane().add(positionLabelPI);
 		
 		JTextArea EmployeeNoTxt = new JTextArea();
+		EmployeeNoTxt.setTabSize(12);
 		EmployeeNoTxt.setFont(new Font("Arial", Font.PLAIN, 13));
 		EmployeeNoTxt.setBounds(165, 95, 220, 25);
 		frmEmployeeLeavePage.getContentPane().add(EmployeeNoTxt);
@@ -308,7 +292,14 @@ public class EmployeeLeavePage {
 			new String[] {
 				"Employee No", "Last Name", "First Name", "Position", "Leave Type", "Start Date", "End Date", "Status"
 			}
-		));
+		) {
+			boolean[] columnEditables = new boolean[] {
+				false, false, false, false, false, false, false, false
+			};
+			public boolean isCellEditable(int row, int column) {
+				return columnEditables[column];
+			}
+		});
 		
 		JButton editButton = new JButton("Edit");
 		editButton.addActionListener(new ActionListener() {
@@ -328,14 +319,14 @@ public class EmployeeLeavePage {
 		btnDashboard.setFont(new Font("Arial", Font.BOLD, 12));
 		btnDashboard.setBackground(new Color(255, 255, 255));
 		btnDashboard.setBounds(784, 252, 122, 32);
-		btnDashboard.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				EmpDashboard empDB = new EmpDashboard();
-				EmpDashboard.main(null);
-			}
-		});
-		
 		frmEmployeeLeavePage.getContentPane().add(btnDashboard);
+		
+		JLabel Imagelbl = new JLabel("Image (Passport Size)");
+		Imagelbl.setHorizontalAlignment(SwingConstants.CENTER);
+		Imagelbl.setBorder(new LineBorder(new Color(0, 0, 0)));
+		Imagelbl.setBackground(new Color(240, 248, 255));
+		Imagelbl.setBounds(544, 95, 188, 185);
+		frmEmployeeLeavePage.getContentPane().add(Imagelbl);
 		
 		
 		submitButton.addActionListener(new ActionListener() {
