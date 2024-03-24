@@ -77,48 +77,48 @@ public class EmployeeLeaveProcessingPage {
 		LeaveListtable.setColumnSelectionAllowed(true);
 		LeaveListtable.setModel(new DefaultTableModel(
 			new Object[][] {
-				{"001", "Sario", "Felicity", "CEO", "April 1,2024", "April 5, 2024", "Approve"},
-				{"002", "Navarro", "Marjorie", "COO", "April 1,2024", "April 2, 2024", "Reject"},
-				{"003", "Ambing", "Apollo", "CFO", "March 25, 2024", "March 31, 2024", "Waiting for Approval"},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
+				{"001", "Sario", "Felicity", "Finance Manager", "April 1,2024", "April 5, 2024", "Approve", ""},
+				{"002", "Navarro", "Marjorie", "Payroll Officer", "April 1,2024", "April 2, 2024", "Reject", "Not Eligible"},
+				{"003", "Ambing", "Apollo", "CSR", "March 25, 2024", "March 31, 2024", "In Progress", null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
 			},
 			new String[] {
-				"Employee No", "Last Name", "First Name", "Position", "Start Date", "End Date", "Status"
+				"     Employee No", "     Last Name", "     First Name", "     Position", "     Start Date", "      End Date", "     Status", "      Reason"
 			}
 		) {
 			Class[] columnTypes = new Class[] {
-				String.class, String.class, String.class, Object.class, Object.class, Object.class, Object.class
+				String.class, String.class, String.class, Object.class, Object.class, Object.class, Object.class, Object.class
 			};
 			public Class getColumnClass(int columnIndex) {
 				return columnTypes[columnIndex];
@@ -204,10 +204,6 @@ public class EmployeeLeaveProcessingPage {
 		scrollPane_1.setBounds(989, 722, 2, 2);
 		frmEmployeeLeaveProcess.getContentPane().add(scrollPane_1);
 		
-		JButton btnNewButton = new JButton("Save");
-		btnNewButton.setBounds(528, 786, 89, 23);
-		frmEmployeeLeaveProcess.getContentPane().add(btnNewButton);
-		
 		JButton SearchButton = new JButton("Search");
 		SearchButton.setFont(new Font("Arial", Font.PLAIN, 12));
 		SearchButton.setBounds(621, 59, 89, 23);
@@ -220,16 +216,20 @@ public class EmployeeLeaveProcessingPage {
 		textField.setBounds(720, 58, 247, 25);
 		frmEmployeeLeaveProcess.getContentPane().add(textField);
 		
-		JButton btnApprove = new JButton("Approve");
-		btnApprove.setFont(new Font("Arial", Font.BOLD, 14));
-		btnApprove.setBackground(new Color(255, 255, 255));
-		btnApprove.setBounds(14, 214, 200, 36);
-		frmEmployeeLeaveProcess.getContentPane().add(btnApprove);
+		JButton btnSave = new JButton("Save");
+		btnSave.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnSave.setFont(new Font("Arial", Font.BOLD, 14));
+		btnSave.setBackground(new Color(255, 255, 255));
+		btnSave.setBounds(14, 214, 200, 36);
+		frmEmployeeLeaveProcess.getContentPane().add(btnSave);
 		
-		JButton btnReject = new JButton("Reject");
-		btnReject.setFont(new Font("Arial", Font.BOLD, 14));
-		btnReject.setBackground(Color.WHITE);
-		btnReject.setBounds(14, 261, 200, 36);
-		frmEmployeeLeaveProcess.getContentPane().add(btnReject);
+		JButton btnSubmit = new JButton("Submit");
+		btnSubmit.setFont(new Font("Arial", Font.BOLD, 14));
+		btnSubmit.setBackground(Color.WHITE);
+		btnSubmit.setBounds(14, 261, 200, 36);
+		frmEmployeeLeaveProcess.getContentPane().add(btnSubmit);
 	}
 }
