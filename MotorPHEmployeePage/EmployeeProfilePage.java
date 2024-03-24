@@ -14,6 +14,7 @@ import java.awt.CardLayout;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
+import javax.swing.border.LineBorder;
 import javax.swing.JSeparator;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -35,7 +36,7 @@ public class EmployeeProfilePage {
 	private JTextField positiontextField;
 	private JTextField immediateSupervisortextField;
 	private JTextField textField;
-
+	
 	/**
 	 * Launch the application.
 	 */
@@ -357,12 +358,13 @@ public class EmployeeProfilePage {
 		DepartmentLabel.setBounds(552, 491, 85, 14);
 		frmEmployeeProfilePage.getContentPane().add(DepartmentLabel);
 		
-		JLabel lblNewLabel = new JLabel("Image (Passport Size)");
-		lblNewLabel.setForeground(new Color(255, 255, 255));
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBackground(new Color(240, 248, 255));
-		lblNewLabel.setBounds(535, 69, 188, 220);
-		frmEmployeeProfilePage.getContentPane().add(lblNewLabel);
+		JLabel ImageLabel = new JLabel("Image (Passport Size)");
+		ImageLabel.setForeground(new Color(255, 255, 255));
+		ImageLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		ImageLabel.setBackground(new Color(240, 248, 255));
+		ImageLabel.setBounds(535, 69, 188, 220);
+		ImageLabel.setBorder(new LineBorder(new Color(0, 0, 0)));
+		frmEmployeeProfilePage.getContentPane().add(ImageLabel);
 		
 		JButton btnDashboard = new JButton("Dashboard");
 		btnDashboard.setFont(new Font("Arial", Font.BOLD, 12));
