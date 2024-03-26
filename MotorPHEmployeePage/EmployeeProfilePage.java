@@ -243,16 +243,20 @@ public class EmployeeProfilePage {
 		frmEmployeeProfilePage.getContentPane().add(lblNewLabel_2);
 		
 		JButton saveButton = new JButton("Save");
-		saveButton.setBounds(40, 644, 135, 37);
+		saveButton.setBounds(274, 644, 135, 37);
 		saveButton.setBackground(new Color(255, 255, 255));
 		saveButton.setFont(new Font("Arial", Font.BOLD, 12));
 		frmEmployeeProfilePage.getContentPane().add(saveButton);
 		
-		JButton editButton = new JButton("Edit");
-		editButton.setBounds(270, 644, 135, 37);
-		editButton.setFont(new Font("Arial", Font.BOLD, 12));
-		editButton.setBackground(new Color(255, 255, 255));
-		frmEmployeeProfilePage.getContentPane().add(editButton);
+		JButton EnterButton = new JButton("Enter");
+		EnterButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		EnterButton.setBounds(36, 644, 135, 37);
+		EnterButton.setFont(new Font("Arial", Font.BOLD, 12));
+		EnterButton.setBackground(new Color(255, 255, 255));
+		frmEmployeeProfilePage.getContentPane().add(EnterButton);
 		
 		JButton searchButton = new JButton("Logout");
 		searchButton.addActionListener(new ActionListener() {
